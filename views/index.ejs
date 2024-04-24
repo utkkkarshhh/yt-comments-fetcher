@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>YouTube Comments</title>
+  </head>
+  <body>
+    <div class="comment-section-heading">
+      <h1>Comments (<%= numberOfComments %>)</h1>
+    </div>
+    <div class="comments">
+      <% comments.forEach(comment => { %>
+      <div class="comment">
+        <!-- Original Comment -->
+        <div class="original-comment">
+          <div class="author">
+            <div class="author-avatar">
+              <img
+                class="author-avatar-img"
+                src="<%= comment.profilePicture %>"
+                alt="User Avatar"
+              />
+            </div>
+            <div class="author-name"><%= comment.author %></div>
+          </div>
+          <div class="comment-text"><%= comment.text %></div>
+        </div>
+        <% if (comment.replies.length > 0) { %>
+        <button class="toggle-replies-btn">Show Replies &#x2304;</button>
+        <% } %>
+        <div class="replies hidden">
+          <% comment.replies.forEach(reply => { %>
+          <div class="reply">
+            <div class="reply-author">
+              <div class="reply-author-avatar">
+                <img src="<%= reply.profilePicture %>" alt="User Avatar" />
+              </div>
+              <div class="reply-author-name"><%= reply.author %></div>
+            </div>
+            <div class="reply-comment-text"><%= reply.text %></div>
+          </div>
+          <% }); %>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+    <script src="scripts.js"></script>
+  </body>
+</html>

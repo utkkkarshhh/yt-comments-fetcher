@@ -1,0 +1,101 @@
+@font-face {
+  font-family: "Hubot Sans";
+  src: url("fonts/HubotSans-Light.woff2") format("woff2"),
+    url("fonts/HubotSans-Medium.woff2") format("woff2"),
+    url("fonts/HubotSans-Regular.woff2") format("woff2"),
+    url("fonts/HubotSans-Bold.woff2") format("woff2");
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+}
+
+html {
+  font-family: "Hubot Sans";
+}
+
+body {
+  margin: 0;
+}
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.comment .original-comment {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.comment .original-comment .author-avatar {
+  margin-right: 10px;
+}
+
+.comment .original-comment .author-avatar img {
+  max-width: 40px;
+  border-radius: 50px;
+}
+
+.comment .original-comment .author-name {
+  font-weight: bold;
+}
+
+.comment .comment-text {
+  padding: 10px 20px;
+}
+
+.replies {
+  padding: 0 20px;
+}
+
+.hidden {
+    display: none;
+  }
+
+.reply {
+  display: flex;
+  margin-top: 10px;
+}
+
+.reply .reply-author {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.reply .reply-author-avatar {
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.reply .reply-author-avatar img {
+  max-width: 30px;
+}
+
+.reply .reply-author-name {
+  font-weight: bold;
+}
+
+.toggle-replies-btn {
+  cursor: pointer;
+  font-family: "Hubot Sans";
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  color: rgb(167, 167, 167);
+  font-size: 15px;
+  text-decoration: underline;
+  margin-top: 5px;
+}
